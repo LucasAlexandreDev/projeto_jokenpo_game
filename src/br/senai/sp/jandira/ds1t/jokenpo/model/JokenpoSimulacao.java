@@ -50,9 +50,9 @@ public class JokenpoSimulacao {
     }
 
     public void converterIntXStringComputador(){
-        if (valorUsuario == 1){
+        if (valorComputador == 1){
             opcaoComputador= "PEDRA";
-        } else if (valorUsuario == 2) {
+        } else if (valorComputador == 2) {
             opcaoComputador= "PAPEL";
         }else{
             opcaoComputador="TESOURA";
@@ -63,19 +63,27 @@ public class JokenpoSimulacao {
 
     public void classificarJogadasJokenpo(){
         if (valorUsuario == valorComputador){
-            condicaoVitoriaXDerrotaXEmpate= "EMPATE";
-        } else if (valorUsuario == 1 && valorComputador== 2) {
-            condicaoVitoriaXDerrotaXEmpate= "DERROTA";
-        } else if (valorUsuario == 1 && valorComputador== 3) {
-            condicaoVitoriaXDerrotaXEmpate="VITÓRIA";
-        } else if (valorUsuario == 2 && valorComputador== 1 ) {
-            condicaoVitoriaXDerrotaXEmpate= "VITÓRIA";
-        }else if (valorUsuario== 2 && valorComputador== 3){
-            condicaoVitoriaXDerrotaXEmpate= "DERROTA";
+            condicaoVitoriaXDerrotaXEmpate= "DEU EMPATE";
+        } else if (valorUsuario== 1 && valorComputador == 2) {
+            condicaoVitoriaXDerrotaXEmpate= "VOCÊ PERDEU";
+        } else if (valorUsuario== 1 && valorComputador == 3) {
+            condicaoVitoriaXDerrotaXEmpate="VOCÊ GANHOU";
+        } else if (valorUsuario== 2 && valorComputador == 1 ) {
+            condicaoVitoriaXDerrotaXEmpate= "VOCÊ GANHOU";
+        } else if (valorUsuario== 2 && valorComputador== 3){
+            condicaoVitoriaXDerrotaXEmpate= "VOCÊ PERDEU";
         } else if (valorUsuario== 3 && valorComputador== 1) {
-            condicaoVitoriaXDerrotaXEmpate= "DERROTA";
+            condicaoVitoriaXDerrotaXEmpate= "VOCÊ PERDEU";
         } else{
-            condicaoVitoriaXDerrotaXEmpate= "VITÓRIA";
+            condicaoVitoriaXDerrotaXEmpate= "VOCÊ GANHOU";
         }
+
+        exibirResultadoJokenpo();
+    }
+
+    public void exibirResultadoJokenpo(){
+        System.out.println("Você escolheu: " +opcaoUsuario);
+        System.out.println("O(A) " +nomeAdversario+ " escolheu: " +opcaoComputador);
+        System.out.println(condicaoVitoriaXDerrotaXEmpate);
     }
 }
