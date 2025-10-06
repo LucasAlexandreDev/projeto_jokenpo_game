@@ -26,10 +26,26 @@ public class JokenpoSimulacao {
 
         System.out.print("Digite o número da sua escolha: ");
         valorUsuario= leitor.nextInt();
+
+        sortearEscolhaComputador();
     }
 
     public void sortearEscolhaComputador(){
         Random numeroAleatrorioDeUmXTres= new Random();
         valorComputador= numeroAleatrorioDeUmXTres.nextInt((3)+1);
+
+        converterIntXString();
+    }
+
+    public void converterIntXString(){
+        if (valorUsuario == 1){
+            opcaoUsuario= "PEDRA";
+        } else if (valorUsuario == 2) {
+            opcaoUsuario= "PAPEL";
+        }else{
+            opcaoUsuario="TESOURA";
+        }
+
+        System.out.println(opcaoUsuario);
     }
 }
