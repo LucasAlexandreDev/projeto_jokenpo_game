@@ -32,7 +32,7 @@ public class JokenpoSimulacao {
 
     public void sortearEscolhaComputador(){
         Random numeroAleatrorioDeUmXTres= new Random();
-        valorComputador= numeroAleatrorioDeUmXTres.nextInt((3)+1);
+        valorComputador= numeroAleatrorioDeUmXTres.nextInt(3+1);
 
         converterIntXStringUsuario();
     }
@@ -56,6 +56,26 @@ public class JokenpoSimulacao {
             opcaoComputador= "PAPEL";
         }else{
             opcaoComputador="TESOURA";
+        }
+
+        classificarJogadasJokenpo();
+    }
+
+    public void classificarJogadasJokenpo(){
+        if (valorUsuario == valorComputador){
+            condicaoVitoriaXDerrotaXEmpate= "EMPATE";
+        } else if (valorUsuario == 1 && valorComputador== 2) {
+            condicaoVitoriaXDerrotaXEmpate= "DERROTA";
+        } else if (valorUsuario == 1 && valorComputador== 3) {
+            condicaoVitoriaXDerrotaXEmpate="VITÓRIA";
+        } else if (valorUsuario == 2 && valorComputador== 1 ) {
+            condicaoVitoriaXDerrotaXEmpate= "VITÓRIA";
+        }else if (valorUsuario== 2 && valorComputador== 3){
+            condicaoVitoriaXDerrotaXEmpate= "DERROTA";
+        } else if (valorUsuario== 3 && valorComputador== 1) {
+            condicaoVitoriaXDerrotaXEmpate= "DERROTA";
+        } else{
+            condicaoVitoriaXDerrotaXEmpate= "VITÓRIA";
         }
     }
 }
