@@ -34,10 +34,10 @@ public class JokenpoSimulacao {
         Random numeroAleatrorioDeUmXTres= new Random();
         valorComputador= numeroAleatrorioDeUmXTres.nextInt((3)+1);
 
-        converterIntXString();
+        converterIntXStringUsuario();
     }
 
-    public void converterIntXString(){
+    public void converterIntXStringUsuario(){
         if (valorUsuario == 1){
             opcaoUsuario= "PEDRA";
         } else if (valorUsuario == 2) {
@@ -45,7 +45,5 @@ public class JokenpoSimulacao {
         }else{
             opcaoUsuario="TESOURA";
         }
-
-        System.out.println(opcaoUsuario);
     }
 }
