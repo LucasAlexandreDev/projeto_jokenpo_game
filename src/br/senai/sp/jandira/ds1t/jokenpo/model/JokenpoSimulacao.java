@@ -1,5 +1,6 @@
 package br.senai.sp.jandira.ds1t.jokenpo.model;
 
+import java.util.Random;
 import java.util.Scanner;
 
 public class JokenpoSimulacao {
@@ -25,5 +26,10 @@ public class JokenpoSimulacao {
 
         System.out.print("Digite o número da sua escolha: ");
         valorUsuario= leitor.nextInt();
+    }
+
+    public void sortearEscolhaComputador(){
+        Random numeroAleatrorioDeUmXTres= new Random();
+        valorComputador= numeroAleatrorioDeUmXTres.nextInt((3)+1);
     }
 }
