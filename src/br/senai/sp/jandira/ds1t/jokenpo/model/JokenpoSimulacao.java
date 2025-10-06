@@ -37,6 +37,8 @@ public class JokenpoSimulacao {
 
         System.out.print("Digite o número da sua escolha: ");
         valorUsuario= leitor.nextInt();
+        System.out.println("---------------------------------");
+
 
         sortearEscolhaComputador();
     }
@@ -78,25 +80,25 @@ public class JokenpoSimulacao {
 
     public void classificarJogadasJokenpo(){
         if (valorUsuario == valorComputador){
-            condicaoVitoriaXDerrotaXEmpate= "DEU EMPATE";
+            condicaoVitoriaXDerrotaXEmpate= " --> DEU EMPATE <--";
 
         } else if (valorUsuario== 1 && valorComputador == 2) {
-            condicaoVitoriaXDerrotaXEmpate= "VOCÊ PERDEU";
+            condicaoVitoriaXDerrotaXEmpate= " --->  VOCÊ PERDEU  <---";
 
         } else if (valorUsuario== 1 && valorComputador == 3) {
-            condicaoVitoriaXDerrotaXEmpate="VOCÊ GANHOU";
+            condicaoVitoriaXDerrotaXEmpate= " --->  VOCÊ GANHOU  <---";
 
         } else if (valorUsuario== 2 && valorComputador == 1 ) {
-            condicaoVitoriaXDerrotaXEmpate= "VOCÊ GANHOU";
+            condicaoVitoriaXDerrotaXEmpate= " --->  VOCÊ GANHOU  <---";
 
         } else if (valorUsuario== 2 && valorComputador== 3){
-            condicaoVitoriaXDerrotaXEmpate= "VOCÊ PERDEU";
+            condicaoVitoriaXDerrotaXEmpate= " --->  VOCÊ PERDEU  <---";
 
         } else if (valorUsuario== 3 && valorComputador== 1) {
-            condicaoVitoriaXDerrotaXEmpate= "VOCÊ PERDEU";
+            condicaoVitoriaXDerrotaXEmpate= " --->  VOCÊ PERDEU  <---";
 
         } else{
-            condicaoVitoriaXDerrotaXEmpate= "VOCÊ GANHOU";
+            condicaoVitoriaXDerrotaXEmpate= " --->  VOCÊ GANHOU  <---";
         }
 
         exibirResultadoJokenpo();
@@ -105,7 +107,9 @@ public class JokenpoSimulacao {
     public void exibirResultadoJokenpo(){
         System.out.println("Você escolheu: " +opcaoUsuario);
         System.out.println("O(A) " +nomeAdversario+ " escolheu: " +opcaoComputador);
+        System.out.println("----------------------------");
         System.out.println(condicaoVitoriaXDerrotaXEmpate);
+        System.out.println("----------------------------");
 
         escolherjogarNovamente();
     }
@@ -115,12 +119,14 @@ public class JokenpoSimulacao {
         Scanner leitor= new Scanner(System.in);
         String jogarNovamente;
 
-        System.out.println("Deseja jogar novamente? (S/N)");
+        System.out.println();
+        System.out.print("Deseja jogar novamente? (S/N): ");
         jogarNovamente= leitor.nextLine();
 
         if (jogarNovamente.equals("S")){
             inicarJokenpo();
         }else{
+            System.out.println();
             System.out.println("Muito obrigado por usar o meu programa");
         }
     }
