@@ -45,5 +45,17 @@ public class JokenpoSimulacao {
         }else{
             opcaoUsuario="TESOURA";
         }
+
+        converterIntXStringComputador();
+    }
+
+    public void converterIntXStringComputador(){
+        if (valorUsuario == 1){
+            opcaoComputador= "PEDRA";
+        } else if (valorUsuario == 2) {
+            opcaoComputador= "PAPEL";
+        }else{
+            opcaoComputador="TESOURA";
+        }
     }
 }
